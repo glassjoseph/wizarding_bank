@@ -25,7 +25,7 @@ class Bank
     person.cash_level -= amount
     person.accounts[name] += amount
     @total_cash += amount
-    "#{amount} galleons have been deposited into #{person.name}'s account. Balance: 750 Cash: #{person.cash_level}"
+    "#{amount} galleons have been deposited into #{person.name}'s account. Balance: #{person.balance(name)} Cash: #{person.cash_level}"
   end
 
 
