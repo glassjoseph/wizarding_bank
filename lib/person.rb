@@ -9,28 +9,34 @@ class Person
 #bank_balance
 
   attr_reader :name
-  attr_accessor :cash_level
+  attr_accessor :cash_level, :accounts
 
 
   def initialize(name, cash_level)
     @name = name
     @cash_level = cash_level
+    @accounts = {"Bank" => 0}
     "#{name} has been created with #{cash_level} galleons in cash."
   end
 
 
   def balance(bank)
-    
+    # binding.pry
+    if accounts[bank] == nil
+      accounts[bank.name]
+    else
+      accounts[bank]
+    end
   end
 end
 
 
-person1 = Person.new("Minerva", 1000)
+minerva = Person.new("Minerva", 1000)
 
 
-person2 = Person.new("Luna", 500)
+luna = Person.new("Luna", 500)
 
 
-# binding.pry
+#  binding.pry
 
 ""
